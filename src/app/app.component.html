@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<router-outlet></router-outlet><!--define routing-->
+
+<div style="text-align:center">
+  <h1 setmycolor>
+    {{ title }}!
+  </h1>
+</div>
+
+
+<div align="right"> Months :
+  <select (change) = "changemonths($event)">
+    <option *ngFor="let i of months;let x=index">{{x}}{{i}}</option><!--month is array name--><!--index is array index-->
+  </select>
+</div>
+
+
+
+<button (click)="myClickFunction($event)">
+  Click Me
+</button>
+
+<div>{{result}}</div>
+
+<input type="text" (keyup)="showmyvalue($event)">
+
+<div *ngIf="state;then first else second">check</div>
+
+<ng-template #first><h1>first</h1></ng-template>
+
+<ng-template #second><h1>second</h1></ng-template>
+
+
+
+<app-navbar></app-navbar>
+
+<app-new-cmp></app-new-cmp>
+<div style="text-align:center">
+  <h1>
+   FEED BACK FORM
+  </h1>
+</div>
+<app-feedback></app-feedback>
